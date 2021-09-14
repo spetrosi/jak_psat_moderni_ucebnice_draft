@@ -1,0 +1,88 @@
+= Asciidoctor PDF Presentation
+Sergei Petrosian <spetrosi@redhat.com>
+:icons: font
+
+== Intro
+
+These are samples slides, they illustrate what presentation slides in Asciidoc
+converted to PDF are capable of.
+
+== First Slide of the Presentation
+
+Having slides and student books in asciidoctor have the following benefits:
+
+* You can create slides with asciidoc and share them in GitHub publicly for version control.
+* This way your students can access the slides and raise PRs to fix your typos.
+* It makes all your presentations consistent.
+
+*You Can Add Subtitles to Your Slides (this is just boldface)*
+
+You can numbered lists:
+
+. First
+. Second
+. Third
+
+You can highlight text with _italics_ or with *boldface*. You can apply both *_together_* if you like.
+
+// section without a title
+== !
+
+[source,python]
+----
+class property(object):
+    def __init__(self, fget=None, fset=None, fdel=None):
+        self.fget = fget
+        self.fset = fset
+        self.fdel = fdel
+
+    def __get__(self, obj, objtype=None):
+        if obj is None:
+            return self
+        if self.fget is None:
+            raise AttributeError("unreadable attribute")
+        return self.fget(obj)
+
+    def __set__(self, obj, value):
+        if self.fset is None:
+            raise AttributeError("can't set attribute")
+        self.fset(obj, value)
+
+    def __delete__(self, obj):
+        if self.fdel is None:
+            raise AttributeError("can't delete attribute")
+        self.fdel(obj)
+----
+
+
+== This Slide Contains Two Columns
+[.columns-2]
+--
+[.column]
+----
+This is the first column. I enclosed it into a code block to be able to use some basic formatting, such as bulleted and numbered lists. Asciidoc does not render text in code block though, hence bullets won't be a real CCS bullets but just stars.
+
+* You still can use bulleted lists
+* Like this
+* It does not look very pretty but works pretty fine
+
+1. You can also use numbered lists
+2. If you like to
+----
+
+[.column]
+----
+The second column contains some math expressions:
+
+2+2*2≠8
+2+2*2=6
+----
+--
+
+== Slide with an Image
+
+And some text above the tired dog.
+
+image::doge.webp[]
+
+And some text below the tired dog.

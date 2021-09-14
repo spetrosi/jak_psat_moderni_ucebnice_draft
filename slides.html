@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link href="/home/spetrosi/Documents/work/jak_psat_moderni_ucebnice/asciidoctor.css" rel="stylesheet">
+<link rel="stylesheet" href="/home/spetrosi/Documents/work/jak_psat_moderni_ucebnice/slides.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/github.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+<script>
+hljs.initHighlightingOnLoad();
+</script>
+</head>
+<body>
+<section class="title slide">
+  <header>
+    <h1>Asciidoctor PDF Presentation</h1>
+  </header>
+  <footer>
+    <p class="author">Sergei Petrosian</p>
+  </footer>
+</section>
+<section class="slide " data-slide-number="1" data-slide-count="5" >
+  <h2>Intro</h2>
+  <p class="">These are samples slides, they illustrate what presentation slides in Asciidoc
+converted to PDF are capable of.</p>
+</section>
+<section class="slide " data-slide-number="2" data-slide-count="5" >
+  <h2>First Slide of the Presentation</h2>
+  <p class="">Having slides and student books in asciidoctor have the following benefits:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can create slides with asciidoc and share them in GitHub publicly for version control.</p>
+</li>
+<li>
+<p>This way your students can access the slides and raise PRs to fix your typos.</p>
+</li>
+<li>
+<p>It makes all your presentations consistent.</p>
+</li>
+</ul>
+</div>
+<p class=""><strong>You Can Add Subtitles to Your Slides (this is just boldface)</strong></p>
+<p class="">You can numbered lists:</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>First</p>
+</li>
+<li>
+<p>Second</p>
+</li>
+<li>
+<p>Third</p>
+</li>
+</ol>
+</div>
+<p class="">You can highlight text with <em>italics</em> or with <strong>boldface</strong>. You can apply both <strong><em>together</em></strong> if you like.</p>
+</section>
+<section class="slide no-title" data-slide-number="3" data-slide-count="5" >
+  <h2>!</h2>
+  <div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-python" data-lang="python">class property(object):
+    def __init__(self, fget=None, fset=None, fdel=None):
+        self.fget = fget
+        self.fset = fset
+        self.fdel = fdel
+
+    def __get__(self, obj, objtype=None):
+        if obj is None:
+            return self
+        if self.fget is None:
+            raise AttributeError("unreadable attribute")
+        return self.fget(obj)
+
+    def __set__(self, obj, value):
+        if self.fset is None:
+            raise AttributeError("can't set attribute")
+        self.fset(obj, value)
+
+    def __delete__(self, obj):
+        if self.fdel is None:
+            raise AttributeError("can't delete attribute")
+        self.fdel(obj)</code></pre>
+</div>
+</div>
+</section>
+<section class="slide " data-slide-number="4" data-slide-count="5" >
+  <h2>This Slide Contains Two Columns</h2>
+  <div class="columns-2"><div class="listingblock column">
+<div class="content">
+<pre>This is the first column. I enclosed it into a code block to be able to use some basic formatting, such as bulleted and numbered lists. Asciidoc does not render text in code block though, hence bullets won't be a real CCS bullets but just stars.
+
+* You still can use bulleted lists
+* Like this
+* It does not look very pretty but works pretty fine
+
+1. You can also use numbered lists
+2. If you like to</pre>
+</div>
+</div>
+<div class="listingblock column">
+<div class="content">
+<pre>The second column contains some math expressions:
+
+2+2*2≠8
+2+2*2=6</pre>
+</div>
+</div></div>
+</section>
+<section class="slide " data-slide-number="5" data-slide-count="5" >
+  <h2>Slide with an Image</h2>
+  <p class="">And some text above the tired dog.</p>
+<figure class="image "><img src="doge.webp" height="undefined" width="undefined"/></figure>
+<p class="">And some text below the tired dog.</p>
+</section>
+</body>
